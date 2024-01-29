@@ -1,4 +1,5 @@
 import DemoFetch from "../components/ui/DemoFetch";
+import DemoHover from "../components/ui/DemoHover";
 import DemoLocalStorage from "../components/ui/DemoLocalStorage";
 
 function App() {
@@ -9,6 +10,9 @@ function App() {
       <hr />
       <h1>useLocalStorage</h1>
       <DemoLocalStorage />
+      <hr />
+      <h1>useHover</h1>
+      <DemoHover />
     </div>
   );
 }
