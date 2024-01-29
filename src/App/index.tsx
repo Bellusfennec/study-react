@@ -1,3 +1,4 @@
+import Auth from "../components/ui/Auth";
 import DemoFetch from "../components/ui/DemoFetch";
 import DemoHover from "../components/ui/DemoHover";
 import DemoLocalStorage from "../components/ui/DemoLocalStorage";
@@ -9,6 +10,9 @@ import DemoWindowScroll from "../components/ui/DemoWindowScroll";
 function App() {
   return (
     <div style={{ padding: "1rem" }}>
+      <h1>Auth</h1>
+      <Auth />
+      <hr />
       <h1>useFetch</h1>
       <DemoFetch />
       <hr />
