@@ -1,6 +1,7 @@
 import DemoFetch from "../components/ui/DemoFetch";
 import DemoHover from "../components/ui/DemoHover";
 import DemoLocalStorage from "../components/ui/DemoLocalStorage";
+import DemoViewportSize from "../components/ui/DemoViewportSize";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <hr />
       <h1>useHover</h1>
       <DemoHover />
+      <hr />
+      <h1>useViewportSize</h1>
+      <DemoViewportSize />
     </div>
   );
 }
