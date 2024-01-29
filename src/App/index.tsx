@@ -1,5 +1,11 @@
+import DemoFetch from "../components/ui/DemoFetch";
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div>
+      <DemoFetch />
+    </div>
+  );
 }
 
 export default App;
