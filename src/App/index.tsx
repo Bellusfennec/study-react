@@ -11,7 +11,7 @@ function App() {
       <h1>useLocalStorage</h1>
       <DemoLocalStorage />
       <hr />
-      <h1>useLocalStorage</h1>
+      <h1>useHover</h1>
       <DemoHover />
     </div>
   );
