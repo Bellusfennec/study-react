@@ -1,17 +1,23 @@
+import CardWrapper from "../common/wrappers/CardWrapper";
 import SignIn from "./SignIn";
 import SignUp from "./SugnUp";
 
 const Auth = () => {
   const handlerSubmit = (event: any) => {
     event.preventDefault();
+    console.log(event);
   };
   return (
     <>
-      <h2>SignIn</h2>
-      <SignIn onSubmit={handlerSubmit} />
-      <hr />
-      <h2>SignUp</h2>
-      <SignUp onSubmit={handlerSubmit} />
+      <CardWrapper>
+        <h2>SignIn</h2>
+        <SignIn onSubmit={handlerSubmit} />
+        <hr />
+      </CardWrapper>
+      <CardWrapper>
+        <h2>SignUp</h2>
+        <SignUp onSubmit={handlerSubmit} />
+      </CardWrapper>
     </>
   );
 };

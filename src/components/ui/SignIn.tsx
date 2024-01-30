@@ -1,14 +1,16 @@
 import { UserSignIn } from "../../types";
-import TextField from "../common/TextFiled";
+import Form from "../common/Form";
+import TextField from "../common/fields/TextField";
 
 const SignIn = (props: UserSignIn) => {
   const { onSubmit } = props;
+
   return (
-    <form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <TextField type="email" name="Email" />
       <TextField type="password" name="Пароль" />
       <button>Отправить</button>
-    </form>
+    </Form>
   );
 };
 
