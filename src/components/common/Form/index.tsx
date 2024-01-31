@@ -4,15 +4,16 @@ import style from "./style.module.css";
 interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   children: React.ReactNode;
   className?: string;
+  ref?: any;
 }
 
-const Form = (props: FormProps) => {
+const Form = React.forwardRef((props: FormProps, ref) => {
   const { children, className, ...rest } = props;
   return (
-    <form className={style.form + (className ? ` ${className}` : "")} {...rest}>
+    <form ref={ref} className={style.form + (className ? ` ${className}` : "")} {...rest}>
       {children}
     </form>
   );
-};
+});
 
 export default Form;

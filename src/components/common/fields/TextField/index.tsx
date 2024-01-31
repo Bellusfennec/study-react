@@ -1,25 +1,26 @@
-import { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes } from "react";
 import style from "./style.module.css";
 import { toFirstUpperCase } from "../../../../utils/string";
-import { Size, Variant } from "../../../../types";
+import { Size, TextFiledType, TextFiledVariant } from "../../../../types";
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   label?: string;
-  name?: string;
-  value?: string;
   description?: string;
   error?: string;
   required?: boolean;
-  variant?: Variant;
+  variant?: TextFiledVariant;
   scale?: Size;
   radius?: Size;
   disabled?: boolean;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  type?: TextFiledType;
 }
 
 const TextField = (props: TextFieldProps) => {
-  const { placeholder, label, description, error, required, ...rest } = props;
-  const { scale = "md", radius = "md", variant = "default" } = props;
+  const { label, description, error, required, type = "text" } = props;
+  const { scale = "md", radius = "md", variant = "default", startIcon, endIcon, ...rest } = props;
 
   return (
     <div className={style["size" + scale.toUpperCase()]}>
@@ -33,14 +34,15 @@ const TextField = (props: TextFieldProps) => {
           {description && <p className={style.description}>{description}</p>}
         </div>
       )}
-      <div
+      <label
         className={`${style.container} ${style["radius" + radius.toUpperCase()]} ${
           style["variant" + toFirstUpperCase(variant)]
         }`}
       >
-        <div>icon</div>
-        <input className={style.input} required={required} {...rest} />
-      </div>
+        {startIcon && <div>{startIcon}</div>}
+        <input type={type} className={style.input} required={required} {...rest} />
+        {endIcon && endIcon}
+      </label>
       {error && <p className={style.error}>{error}</p>}
     </div>
   );
