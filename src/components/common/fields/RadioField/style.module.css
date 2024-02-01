@@ -3,6 +3,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  gap: 0.25em;
+  padding: 1px;
 }
 .required {
   color: #cc0202;
@@ -15,24 +17,30 @@
   gap: 0.1em;
 }
 .label {
-  line-height: 1em;
+  color: black;
+}
+.labelLeft {
+  order: 1;
+}
+.labelRight {
+  order: 3;
 }
 .description {
   color: #a7a6a6;
   font-size: 0.8em;
   line-height: 1em;
+  color: cadetblue;
 }
 .error {
   margin-top: 0.2em;
   color: #cc0202;
-  line-height: 1em;
 }
-
 .input {
-  width: 100%;
+  margin-top: 1px;
   outline: none;
   border: none;
   background: transparent;
+  order: 2;
 }
 .input:disabled {
   width: 100%;
