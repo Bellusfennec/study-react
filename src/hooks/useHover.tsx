@@ -9,15 +9,16 @@ const useHover = () => {
     setHover(!hovered);
   }, [hovered]);
 
-  useEffect(() => {
+  const handleMouseHoverEvent = () => {
     if (ref.current !== null) {
       ref.current.addEventListener("mouseover", handleMouseHover);
       ref.current.addEventListener("mouseout", handleMouseHover);
     }
-    return () => {
-      ref.current.addEventListener("mouseover", handleMouseHover);
-      ref.current.addEventListener("mouseout", handleMouseHover);
-    };
+  };
+
+  useEffect(() => {
+    handleMouseHoverEvent();
+    return () => handleMouseHoverEvent();
   }, [ref, hovered]);
 
   return { hovered, ref };
