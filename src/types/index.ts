@@ -9,3 +9,5 @@ export type RadioFiledVariant = "filled" | "outline";
 export interface ObjectData {
   [key: string]: string;
 }
+
+export type Direction = "ASC" | "DESC";
