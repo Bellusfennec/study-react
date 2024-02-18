@@ -1,9 +1,11 @@
+import { useSearchParams } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { UserSignIn } from "../../types";
 import Form from "../common/Form";
 import RadioField from "../common/fields/RadioField";
 import TextField from "../common/fields/TextField";
 import FieldWrapper from "../common/wrappers/FieldWrapper";
+import LinkButton from "../common/buttons/LinkButton";
 
 const initialForm = {
   name: "",
@@ -17,6 +19,7 @@ const initialForm = {
 const SignUp = (props: UserSignIn) => {
   const { onSubmit } = props;
   const { formRef, handlerChange, handlerSubmit } = useForm({ initial: initialForm, onSubmit });
+  const [, setParams] = useSearchParams();
 
   return (
     <Form ref={formRef} onSubmit={handlerSubmit} onChange={handlerChange}>
@@ -31,7 +34,8 @@ const SignUp = (props: UserSignIn) => {
       </FieldWrapper>
       <TextField type="password" label="Пароль" name="password" />
       <TextField type="password" label="Повторите пароль" name="passwordRepeat" />
-      <button>Зарегестрироватся</button>
+      <button type="submit">Создать</button>
+      <LinkButton onClick={() => setParams({ page: "login" })}>У меня есть аккаунт</LinkButton>
     </Form>
   );
 };
