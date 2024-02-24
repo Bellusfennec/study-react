@@ -39,6 +39,7 @@ const useFetchMore = (props: UseFetchMoreProps) => {
         if (axios.isCancel(error)) {
           return;
         }
+        setHasMore(false);
         setError(error);
       })
       .finally(() => setLoading(false));
