@@ -22,7 +22,7 @@ const useSort = (props: useSortProps) => {
     return sortedData;
   }
 
-  return { data: getSorted(data), direction };
+  return { data: data.length > 0 && data[0]?.created ? getSorted(data) : data, direction };
 };
 
 export default useSort;
