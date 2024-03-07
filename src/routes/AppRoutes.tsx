@@ -1,16 +1,18 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import HeroItem from "../pages/Hero/HeroItem";
-import HeroList from "../pages/Hero/HeroList";
-import Hook from "../pages/Hook";
-import Main from "../pages/Main";
-import NotFound from "../pages/errors/NotFound";
-import EpisodeList from "../pages/episode/EpisodeList";
-import EpisodeItem from "../pages/episode/EpisodeItem";
-import LocationList from "../pages/location/LocationList";
-import LocationItem from "../pages/location/LocationItem";
-import Auth from "../pages/Auth";
-import PrivateRoute from "../components/common/PrivateRoute";
+
+const MainLayout = lazy(() => import("../layouts/MainLayout"));
+const Main = lazy(() => import("../pages/Main"));
+const Hook = lazy(() => import("../pages/Hook"));
+const NotFound = lazy(() => import("../pages/errors/NotFound"));
+const Auth = lazy(() => import("../pages/Auth"));
+const PrivateRoute = lazy(() => import("../components/common/PrivateRoute"));
+const HeroItem = lazy(() => import("../pages/Hero/HeroItem"));
+const HeroList = lazy(() => import("../pages/Hero/HeroList"));
+const EpisodeList = lazy(() => import("../pages/episode/EpisodeList"));
+const EpisodeItem = lazy(() => import("../pages/episode/EpisodeItem"));
+const LocationList = lazy(() => import("../pages/location/LocationList"));
+const LocationItem = lazy(() => import("../pages/location/LocationItem"));
 
 const AppRoutes = () => {
   return (

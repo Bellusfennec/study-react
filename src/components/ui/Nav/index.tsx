@@ -3,7 +3,7 @@ import "./style.css";
 import { useAuth } from "../../../contexts/AuthProvider";
 import LinkButton from "../../common/buttons/LinkButton";
 
-const Nav = () => {
+export const Nav = () => {
   const auth = useAuth();
   const menu = [
     { id: 1, name: "Хуки", link: "/hook" },
@@ -32,5 +32,3 @@ const Nav = () => {
     </nav>
   );
 };
-
-export default Nav;
