@@ -1,11 +1,7 @@
-import DemoFetch from "../components/ui/DemoFetch";
+import AppRoutes from "../routes/AppRoutes";
 
 function App() {
-  return (
-    <div>
-      <DemoFetch />
-    </div>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
