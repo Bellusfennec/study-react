@@ -1,14 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "./style.css";
+import { useAuth } from "../../../contexts/AuthProvider";
+import LinkButton from "../../common/buttons/LinkButton";
 
 const Nav = () => {
+  const auth = useAuth();
   const menu = [
     { id: 1, name: "Хуки", link: "/hook" },
-    { id: 2, name: "Форм", link: "/form" },
-    { id: 3, name: "Герои", link: "/hero" },
-    { id: 4, name: "Эпизоды", link: "/episode" },
-    { id: 5, name: "Локации", link: "/location" }
+    { id: 2, name: "Герои", link: "/hero" },
+    { id: 3, name: "Эпизоды", link: "/episode" },
+    { id: 4, name: "Локации", link: "/location" }
   ];
+
   return (
     <nav className="nav__container">
       <Link to="/" className="nav__logo">
@@ -21,6 +24,11 @@ const Nav = () => {
           </NavLink>
         ))}
       </div>
+      {auth.user === null ? (
+        <Link to="/auth">Войти</Link>
+      ) : (
+        <LinkButton onClick={() => auth?.signOut?.()}>Выйти</LinkButton>
+      )}
     </nav>
   );
 };

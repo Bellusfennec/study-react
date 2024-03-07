@@ -9,7 +9,8 @@ import EpisodeList from "../pages/episode/EpisodeList";
 import EpisodeItem from "../pages/episode/EpisodeItem";
 import LocationList from "../pages/location/LocationList";
 import LocationItem from "../pages/location/LocationItem";
-import Form from "../pages/Auth";
+import Auth from "../pages/Auth";
+import PrivateRoute from "../components/common/PrivateRoute";
 
 const AppRoutes = () => {
   return (
@@ -17,18 +18,18 @@ const AppRoutes = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Main />} />
         <Route path="hook" element={<Hook />} />
-        <Route path="form" element={<Form />} />
-        <Route path="hero">
+        <Route path="auth" element={<Auth />} />
+        <Route path="hero" element={<PrivateRoute />}>
           <Route index element={<HeroList />} />
           <Route path=":heroId" element={<HeroItem />} />
           <Route path="*" element={<HeroList />} />
         </Route>
-        <Route path="episode">
+        <Route path="episode" element={<PrivateRoute />}>
           <Route index element={<EpisodeList />} />
           <Route path=":episodeId" element={<EpisodeItem />} />
           <Route path="*" element={<HeroList />} />
         </Route>
-        <Route path="location">
+        <Route path="location" element={<PrivateRoute />}>
           <Route index element={<LocationList />} />
           <Route path=":locationId" element={<LocationItem />} />
           <Route path="*" element={<HeroList />} />
